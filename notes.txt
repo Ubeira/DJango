@@ -1,0 +1,31 @@
+## Instalar:
+
+- python
+- django ->
+- visualCode (opcional)
+
+## Configuar primer proyecto:
+
+# Comandos por consola:
+
+- django-admin startproject project_name
+- python manage.py help    ->   te permite ver un litado con los comandos que puedes utilizar
+- python manage.py migrate          -> por defecto cargará una BBDD de SQLlite
+- python manage.py runserver        -> por defecto cargará un servidor en el puerto 8000 (http://localhost:8000/)
+
+
+
+# Recordatorio python
+
+- para introducir valores en un string, usamos la siguiente forma:
+    "string exemple %s string exemple"%value
+
+## Crear plantillas
+
+- Creación de objeto de tipo Template (plantilla html) -> plt=Template(doc_externo.read())
+- Creación de un contexto (datos adicionales que puede usar el template) -> ctx=Context()
+- Renderizado del objeto Template    ->documento=plt.render(ctx)
+
+# pistas
+
+- para cargar el contexto usamos doble llave en la plantilla

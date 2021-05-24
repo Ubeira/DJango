@@ -1,4 +1,4 @@
-"""FirstProyect URL Configuration
+"""plantillas URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,14 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from plantillas.views import hello, helloCtx
 from django.contrib import admin
 from django.urls import path
-from FirstProyect.views import getAge, hello, goodbye, getData
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
-    path('getData/', getData),
-    path('goodbye/', goodbye),
-    # Para pasar valores a traves de params, utilizamos <>, recordando que son string
-    path("getAge/<int:age>/<int:year>", getAge),
+    path('helloCtx/', helloCtx),
 ]
