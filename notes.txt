@@ -14,12 +14,13 @@
 - python manage.py runserver        -> por defecto cargará un servidor en el puerto 8000 (http://localhost:8000/)
 
 
-
 # Recordatorio python
 
 - para introducir valores en un string, usamos la siguiente forma:
     "string exemple %s string exemple"%value
 - Los tíldes se imprimen en html como &iacute;  (&+letra+acute;)
+- lista ===array?
+- classes ==objeto?
 
 ## Crear plantillas
 
@@ -29,4 +30,30 @@
 
 # pistas
 
-- para cargar el contexto en html usamos doble llave en la plantilla
+- Para cargar el contexto en html usamos doble llave en la plantilla
+- Las llamadas a métodos en plantillas no usan Paréntesis!!!
+
+## Django
+
+# Jerarquía de llamadas desde plantillas (al usar un punto )
+
+1º Busca un diccionario
+2º Busca un atributo o propiedad de una clase
+3º Busca un metodo perteneciente a un objeto/clase
+4º Busca un índice de una lista
+* Fíjate que el método no usa Paréntesis
+
+# bucles / condicionales
+
+· Los for:
+    {% for elTema in temas %}
+    {% endfor %}
+
+· Los if:
+    {% if temas %}
+    {% endif %}
+
+- los else:
+    {% if temas %}
+    {% else %}
+    {% endif %}

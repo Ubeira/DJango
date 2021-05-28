@@ -57,3 +57,15 @@ def clasesData(request):
     ctx = Context({"nombre": p1.nombre, "apellido": p1.apellido})
     documento = plt.render(ctx)
     return HttpResponse(documento)
+
+
+def listas(request):
+    temas = ["Plantillas", "Modelos", "Formularios", "Vistas"]
+
+    doc_externo = open(
+        "C:/Users/NITROPC/Documents/My-Code/pildoras/python/DJango/plantillas/plantillas/plantillasHtml/listas.html")
+    plt = Template(doc_externo.read())
+    doc_externo.close()
+    ctx = Context({"temas": temas})
+    documento = plt.render(ctx)
+    return HttpResponse(documento)

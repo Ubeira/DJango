@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<h1>Los temas son: {{temas}}</h1>-->
+    <!--<p>Tema 1:{{temas.0}}</p>-->
+    <h1>Temas: </h1>
+    <ol>
+        <!-- Para utilizar un for en django va de la siguiente forma: -->
+        {%if temas%}
+        {% for elTema in temas %}
+        <li>
+            <!--{{elTema.upper}}-->
+            <!--{{elTema.lower}}-->
+            {{elTema.capitalize}}
+        </li>
+
+        {% endfor %}
+        {% else %}
+
+        <p>No hay temas disponibles</p>
+
+        {% endif %}
+        <!-- Acordándose de cerrar el for!! -->
+    </ol>
+</body>
+</html>
