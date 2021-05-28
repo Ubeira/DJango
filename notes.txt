@@ -19,6 +19,7 @@
 
 - para introducir valores en un string, usamos la siguiente forma:
     "string exemple %s string exemple"%value
+- Los tíldes se imprimen en html como &iacute;  (&+letra+acute;)
 
 ## Crear plantillas
 
@@ -28,4 +29,4 @@
 
 # pistas
 
-- para cargar el contexto usamos doble llave en la plantilla
+- para cargar el contexto en html usamos doble llave en la plantilla
