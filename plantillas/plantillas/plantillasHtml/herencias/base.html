@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Para pode cambiar el título de la web indicaos que puede cambiar: -->
+    <title>
+        {% block title %} {% endblock %}
+
+    </title>
+    <style>
+        #title {
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">Título de la plantilla padre</h1>
+        {% include "./superior/barra.html" %}
+        <h3>Aprendiendo con python/django</h3>
+    </header>
+    <!-- Indicamos el contenido cambiante -->
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <p>Gracias por su visita</p>
+    </footer>
+
+</body>
+</html>

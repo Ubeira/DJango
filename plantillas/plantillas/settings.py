@@ -54,7 +54,7 @@ ROOT_URLCONF = 'plantillas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/NITROPC/Documents/My-Code/pildoras/python/DJango/plantillas/plantillas/plantillasHtml", "C:/Users/NITROPC/Documents/My-Code/pildoras/python/DJango/plantillas/plantillas/plantillasHtml/herencias"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

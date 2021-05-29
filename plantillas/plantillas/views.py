@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.http import HttpResponse
 from django.template import Template, Context
+from django.shortcuts import render
 
 
 def hello(request):
@@ -69,3 +70,26 @@ def listas(request):
     ctx = Context({"temas": temas})
     documento = plt.render(ctx)
     return HttpResponse(documento)
+
+
+# Increíble, cuatro líneas hace todo lo anterior...
+
+
+def doingShortcuts(request):
+    p1 = Persona("Don Iago", "Ubeira")
+    temas = ["Plantillas", "Modelos", "Formularios", "Vistas"]
+    time = datetime.now()
+
+    return render(request, "shortcuts.html", {"nombre": p1.nombre, "apellido": p1.apellido, "temas": temas, "time": time})
+
+
+def herencias(request):
+    time = datetime.now()
+
+    return render(request, "./herencias/CursoC.html", {"dameFecha": time})
+
+
+def herencia2(request):
+    time = datetime.now()
+
+    return render(request, "./herencias/CursoB.html", {"dameFecha": time})

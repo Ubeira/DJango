@@ -57,3 +57,14 @@
     {% if temas %}
     {% else %}
     {% endif %}
+
+# Directorio de las plantillas
+
+- Por defecto, Django carga las plantillas en el directorio de intalación de Django, 
+para indicar la carpeta donde queremos que busque las plantillas, debemos introducir 
+en settings.py, en el apartado de TEMPLATES, DIRS, entre esos corchete metemos la dirección 
+donde queremos que busque.
+
+# plantillas incrustadas (parecido a componentes de React)
+
+- con includes, puedes introducir códigos html de diferentes plantillas!!!
