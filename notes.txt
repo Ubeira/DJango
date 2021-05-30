@@ -12,7 +12,7 @@
 - python manage.py help    ->   te permite ver un litado con los comandos que puedes utilizar
 - python manage.py migrate          -> por defecto cargará una BBDD de SQLlite
 - python manage.py runserver        -> por defecto cargará un servidor en el puerto 8000 (http://localhost:8000/)
-
+- python manage.py startapp gestionPedidos -> Crear aplicación
 
 # Recordatorio python
 
@@ -68,3 +68,36 @@ donde queremos que busque.
 # plantillas incrustadas (parecido a componentes de React)
 
 - con includes, puedes introducir códigos html de diferentes plantillas!!!
+
+# aplicaciones
+
+- 1º creamos la aplicación con el comandos
+- 2º creamos tablas en models.py
+- 3º introducimos la nueva aplicación en settings INSTALLED_APPS
+- 4º Comprobamos si todo va bien: python manage.py check appName   (appName es el nombre introducido en 3º)
+- 5º Una vez que da todo correcto, hacemos migraciones:  python manage.py makemigrations   (esto genera un número de migración)
+- 6º Creamos código sql: python manage.py sqlmigrate appName migrationNumber 0001
+- 7º cargamos el código creado: python manage.py migrate
+
+# modificación de bbdd
+
+-  python manage.py shell     abre python en terminal
+- >>> from gestionPedidos.models import tableName
+- Para AÑADIR elementos en la tabla tableName, necesitamos dos pasos
+>>> art=tableName(campoName="string",campoName2="string",campoName3=1)  (campoName, es el nombre del campo de la tabla, string entre comillas y integer sin ellas)
+>>> art.save()
+- Ahora si ves la base de datos, verás que se han introducido en tablename los datos
+- También se puede hacer en un comando:
+art3=tableName.objects.create(campoName="string",...)
+- ojo el nombre de la variable se guarda, para modificarlo posteriormente
+- Para MODIFICAR
+>>> art.precio=100
+>>> art.save()
+- Para ELIMINAR
+- Importante, especificar el elemento a ELIMINAR
+>>> art5=Articulos.objects.get(id=1)       (el where va entre parentesis, puedes hacer combinaciones)
+>>> art5.delete()
+- Hacer un SELECT
+>>> Lista=tableName.objects.all()
+>>> Lista
+>>> Lista.query.__str__()        
