@@ -3,6 +3,7 @@
 - python
 - django ->
 - visualCode (opcional)
+- psycopg2  (PostgreSQL)
 
 ## Configuar primer proyecto:
 
