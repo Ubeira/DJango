@@ -4,6 +4,7 @@
 - django ->
 - visualCode (opcional)
 - psycopg2  (PostgreSQL)
+- python-dotenv (https://www.youtube.com/watch?v=lcFkfRbdqG8&t=78s)
 
 ## Configuar primer proyecto:
 
@@ -81,9 +82,11 @@ donde queremos que busque.
 - 7º cargamos el código creado: python manage.py migrate
 
 # modificación de bbdd
+1º Importamos el modelo (from gestionPedidos.models import ...)
 
 -  python manage.py shell     abre python en terminal
 - >>> from gestionPedidos.models import tableName
+
 - Para AÑADIR elementos en la tabla tableName, necesitamos dos pasos
 >>> art=tableName(campoName="string",campoName2="string",campoName3=1)  (campoName, es el nombre del campo de la tabla, string entre comillas y integer sin ellas)
 >>> art.save()
@@ -102,3 +105,14 @@ art3=tableName.objects.create(campoName="string",...)
 >>> Lista=tableName.objects.all()
 >>> Lista
 >>> Lista.query.__str__()        
+
+- Hacer un SELECT con condiciones (where, order by)
+>>>Articulos.objects.filter(seccion="algo",precio__gte=20,order_by("seccion"))   ->el campo sección se llama algo, con un precio greater than 20 ordenado por el campo seccion
+>>>Articulos.objects.filter(seccion="algo",precio__range(10,50))
+>>>Articulos.objects.filter(seccion="algo",order_by("-seccion")) -> el menos indica orden descendente!!
+
+
+## Migraciones
+python manage.py makemigrations
+python manage.py migrate
+
